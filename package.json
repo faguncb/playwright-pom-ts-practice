@@ -1,0 +1,15 @@
+{
+  "name": "playwright-pom-ts-practice",
+  "version": "1.0.0",
+  "description": "Playwright automation with TypeScript and POM for practicesoftwaretesting.com",
+  "scripts": {
+    "test": "playwright test"
+  },
+  "dependencies": {
+    "@playwright/test": "^1.46.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.5.1",
+    "typescript": "^5.5.4"
+  }
+}
