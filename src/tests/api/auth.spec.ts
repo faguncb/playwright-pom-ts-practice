@@ -1,8 +1,7 @@
 import { test, expect } from '@playwright/test';
 
 test('API: Authenticate user', async ({ request }) => {
-    const apiContext = await request.newContext({ baseURL: 'https://api.practicesoftwaretesting.com' });
-    const response = await apiContext.post('/auth/login', {
+    const response = await request.post('https://api.practicesoftwaretesting.com/auth/login', {
         data: {
             email: 'user@practicesoftwaretesting.com',
             password: 'welcome01'

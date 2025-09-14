@@ -1,10 +1,8 @@
 import { test, expect } from '@playwright/test';
 
 test('API: Fetch products after auth', async ({ request }) => {
-    const apiContext = await request.apiContext({ baseURL: 'https://api.practicesoftwaretesting.com' });
-
     // First, authenticate
-    const authResponse = await apiContext.post('/auth/login', {
+    const authResponse = await request.post('https://api.practicesoftwaretesting.com/auth/login', {
         data: {
             email: 'user@practicesoftwaretesting.com',
             password: 'welcome01'
@@ -13,7 +11,7 @@ test('API: Fetch products after auth', async ({ request }) => {
     const { access_token } = await authResponse.json();
 
     // Then, fetch products with token
-    const productsResponse = await apiContext.get('/products', {
+    const productsResponse = await request.get('https://api.practicesoftwaretesting.com/products', {
         headers: {
             Authorization: `Bearer ${access_token}`
         }
